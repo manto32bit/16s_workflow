@@ -51,7 +51,7 @@ def task_filter(indir):
 def task_derep(indir):
     input = os.path.join(indir, merged_dir, merged_file)
     output = os.path.join(indir, merged_dir, filtered_file)
-    cmd1 = "{vsearch} --derep_fulllength {input} --output {output} -sizeout".format(input=input,output=output)
+    cmd1 = "{vsearch} --derep_fulllength {input} --output {output} -sizeout --uc splited/all.derep.uc".format(input=input,output=output)
     cmd2 = "{vsearch} --sortbysize  {input} --output {output} --minsize 1".format(input=input,output=output)
     check_call(cmd1)
     check_call(cmd2)
